@@ -1,4 +1,6 @@
 import ExpenseItems from "./components/ExpenseItems";
+import Card from "./components/Card"
+
 function App() {
   const expenses = [
     {title: "type A", amount: "42.4" ,date:new Date(2023, 8, 3)},
@@ -8,18 +10,21 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItems
-        expenses = {expenses[0]}
-      >
-      </ExpenseItems>
-      <ExpenseItems
-        expenses = {expenses[1]}
-      >
-      </ExpenseItems>
-      <ExpenseItems
-        expenses = {expenses[2]}
-      >
-      </ExpenseItems>
+      <Card className="expenses">
+        <ExpenseItems
+          expenses = {expenses[0]}
+        >
+        </ExpenseItems>
+        <ExpenseItems
+          expenses = {expenses[1]}
+        >
+        </ExpenseItems>
+        <ExpenseItems
+          expenses = {expenses[2]}
+        >
+        </ExpenseItems>
+      </Card>
+
     </div> 
   );
 }

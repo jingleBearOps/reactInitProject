@@ -1,5 +1,5 @@
 import "./ExpenseItems.css"
-import Card from "./Card"
+ 
 function ExpenseItems(props){
     const expenseDate = new Date(2023, 8, 17)
     const expenseTitle = 'mushrooms'
