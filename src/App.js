@@ -3,9 +3,9 @@ import Card from "./components/Card"
 
 function App() {
   const expenses = [
-    {title: "type A", amount: "42.4" ,date:new Date(2023, 8, 3)},
-    {title: "type B", amount: "29.3" ,date:new Date(2023, 7, 23)},
-    {title: "type C", amount: "33.2" ,date:new Date(2023, 5, 3)}
+    {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3)},
+    {title: "B +", amount: "29" ,date:new Date(2023, 7, 23)},
+    {title: "Unknown Fungi", amount: "33" ,date:new Date(2023, 5, 3)}
   ]
   return (
     <div>
