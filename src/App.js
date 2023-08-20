@@ -7,9 +7,13 @@ function App() {
     {title: "B +", amount: "29" ,date:new Date(2023, 7, 23)},
     {title: "Unknown Fungi", amount: "33" ,date:new Date(2023, 5, 3)}
   ]
+  const addExpenseHandler = expense => {
+    console.log("IN App.js");
+    console.log(expense);
+  };
   return (
     <div>
-      <NewExpense/>
+      <NewExpense onAddExpense = {addExpenseHandler} />
       <Card className="expenses">
         <ExpenseItems
           expenses = {expenses[0]}
