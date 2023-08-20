@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import "./ExpenseItems.css"
+import "./ExpenseItems.css";
 
 import Card from "./Card";
-function ExpenseItems(props){
-    let title = props.expenses.title
+const  ExpenseItems = (props) => {
+    const [title, setTitle] = useState(props.expenses.title);
+    // let title = props.expenses.title;
     const clickHandler = ()=>{
-        console.log("click clicked")
-        title = "Updated!"
-    }
+        console.log("click clicked");
+        setTitle('Updated!');
+    };
+
     return(
         <Card className = "expense-item">
             <div>{props.expenses.date.toISOString()}</div>
@@ -20,5 +22,5 @@ function ExpenseItems(props){
         </Card>
 
     )
-}
+};
 export default ExpenseItems
