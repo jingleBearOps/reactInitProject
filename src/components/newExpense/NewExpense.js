@@ -4,9 +4,16 @@ import ExpenseFrom from "./ExpenseForm";
 
 
 const NewExpense = () => {
+    const saveExpenseDataHandler = (eneterdExpenseData) => {
+        const expenseData = {
+            ...eneterdExpenseData,
+            id: Math.random().toString()
+        }
+        console.log(expenseData);
+    };
     return(
         <div className = 'new-expense'>
-            <ExpenseFrom/>
+            <ExpenseFrom onSaveExpenseData = {saveExpenseDataHandler}/>
         </div>
     )
 };
