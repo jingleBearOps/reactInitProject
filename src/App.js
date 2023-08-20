@@ -1,6 +1,6 @@
-import ExpenseItems from "./components/ExpenseItems";
-import Card from "./components/Card"
-
+import ExpenseItems from "./components/expense/ExpenseItems";
+import Card from "./components/UI/Card"
+import NewExpense from "./components/newExpense/NewExpense";
 function App() {
   const expenses = [
     {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3)},
@@ -9,7 +9,7 @@ function App() {
   ]
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense/>
       <Card className="expenses">
         <ExpenseItems
           expenses = {expenses[0]}

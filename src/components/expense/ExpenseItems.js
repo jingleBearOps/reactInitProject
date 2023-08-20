@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import "./ExpenseItems.css";
 
-import Card from "./Card";
+import Card from "../UI/Card";
 const  ExpenseItems = (props) => {
     const [title, setTitle] = useState(props.expenses.title);
+    // array deconstruction return array(first is the variable, second is the function to update the variable)
     // let title = props.expenses.title;
     const clickHandler = ()=>{
         console.log("click clicked");
