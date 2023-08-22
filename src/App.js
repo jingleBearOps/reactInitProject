@@ -48,11 +48,14 @@ function App() {
   return (
     <div>
       <NewExpense onAddExpense = {addExpenseHandler} />
-      <Card className="expenses">
-        <ExpensesFilter selected = {filteredYear} onChangeFilter = {filterChangeHandler} />
-        <p>Data for year {filterInfoText} is hidden.</p>
-        <ExpensesList items = {filteredExpenses}/>
-      </Card>
+      <li>
+        <Card className="expenses">
+          <ExpensesFilter selected = {filteredYear} onChangeFilter = {filterChangeHandler} />
+          <p>Data for year {filterInfoText} is hidden.</p>
+          <ExpensesList items = {filteredExpenses}/>
+        </Card>
+      </li>
+
 
     </div> 
   );

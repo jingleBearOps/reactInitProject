@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import './NewExpense.css';
 import ExpenseFrom from "./ExpenseForm";
+import { is } from "@babel/types";
 
 
 const NewExpense = (props) => {
+    const [isEditing, setIsEditing] = useState(false);
     const saveExpenseDataHandler = (eneterdExpenseData) => {
         const expenseData = {
             ...eneterdExpenseData,
@@ -12,9 +14,16 @@ const NewExpense = (props) => {
         // console.log(expenseData);
         props.onAddExpense(expenseData)
     };
+    const startEditingHandler = () => {
+        setIsEditing(true);
+    };
+    const stopEditingHandler = () => {
+        setIsEditing(false);
+    }
     return(
         <div className = 'new-expense'>
-            <ExpenseFrom onSaveExpenseData = {saveExpenseDataHandler}/>
+            {!isEditing && <button onClick = {startEditingHandler}>Add New Expense</button>}
+            {isEditing && <ExpenseFrom onSaveExpenseData = {saveExpenseDataHandler} onStopEditing = {stopEditingHandler}/>}
         </div>
     )
 };
