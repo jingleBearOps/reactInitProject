@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
-import ExpenseItems from "./components/expense/ExpenseItems";
+// import ExpenseItems from "./components/expense/ExpenseItems";
 import Card from "./components/UI/Card"
 import NewExpense from "./components/newExpense/NewExpense";
 import "./components/expense/ExpenseItems.css";
 import ExpensesFilter from './components/expense/ExpenseFilter';
+import ExpensesList from './components/expense/ExpensesList';
 
 const DUMMY_EXPENSES = [
   {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3), id: 'e1'},
@@ -43,27 +44,14 @@ function App() {
   const filteredExpenses  = expenses.filter(expense => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
-  
+
   return (
     <div>
       <NewExpense onAddExpense = {addExpenseHandler} />
       <Card className="expenses">
         <ExpensesFilter selected = {filteredYear} onChangeFilter = {filterChangeHandler} />
         <p>Data for year {filterInfoText} is hidden.</p>
-        {filteredExpenses.map(i => <ExpenseItems key= {i.id} expenses = {i}/>)}
-        {/* <ExpenseItems 
-          expenses = {expenses[0]}
-        >
-        </ExpenseItems>
-        <ExpenseItems
-          expenses = {expenses[1]}
-        >
-        </ExpenseItems>
-        <ExpenseItems
-          expenses = {expenses[2]}
-        >
-        </ExpenseItems> */}
-
+        <ExpensesList items = {filteredExpenses}/>
       </Card>
 
     </div> 
