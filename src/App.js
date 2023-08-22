@@ -5,11 +5,11 @@ import Card from "./components/UI/Card"
 import NewExpense from "./components/newExpense/NewExpense";
 import "./components/expense/ExpenseItems.css";
 import ExpensesFilter from './components/expense/ExpenseFilter';
-import { waitForDomChange } from '@testing-library/react';
+
 const DUMMY_EXPENSES = [
-  {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3)},
-  {title: "B +", amount: "29" ,date:new Date(2023, 7, 23)},
-  {title: "Unknown Fungi", amount: "33" ,date:new Date(2023, 5, 3)}
+  {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3), id: 'e1'},
+  {title: "B +", amount: "29" ,date:new Date(2023, 7, 23), id: 'e2'},
+  {title: "Unknown Fungi", amount: "33" ,date:new Date(2023, 5, 3), id: 'e3'}
 ]
 function App() {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
@@ -46,7 +46,7 @@ function App() {
       <Card className="expenses">
         <ExpensesFilter selected = {filteredYear} onChangeFilter = {filterChangeHandler} />
         <p>Data for year {filterInfoText} is hidden.</p>
-        {expenses.map(i => <ExpenseItems expenses = {i}/>)}
+        {expenses.map(i => <ExpenseItems key= {i.id} expenses = {i}/>)}
         {/* <ExpenseItems 
           expenses = {expenses[0]}
         >
