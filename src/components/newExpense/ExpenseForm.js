@@ -34,7 +34,7 @@ const ExpenseFrom = (props) => {
         event.preventDefault();
         const expenseDate = {
             title: enterdTitle,
-            amount: enterdAmount,
+            amount: +enterdAmount,
             date: new Date(enterdDate)
         };
         // console.log(expenseDate);
