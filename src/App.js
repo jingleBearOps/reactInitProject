@@ -6,7 +6,7 @@ import NewExpense from "./components/newExpense/NewExpense";
 import "./components/expense/ExpenseItems.css";
 import ExpensesFilter from './components/expense/ExpenseFilter';
 import ExpensesList from './components/expense/ExpensesList';
-
+import ExpensesChart from './components/expense/ExpensesChart';
 const DUMMY_EXPENSES = [
   {title: "Golden Teacher", amount: "42" ,date:new Date(2023, 8, 3), id: 'e1'},
   {title: "B +", amount: "29" ,date:new Date(2023, 7, 23), id: 'e2'},
@@ -52,6 +52,7 @@ function App() {
         <Card className="expenses">
           <ExpensesFilter selected = {filteredYear} onChangeFilter = {filterChangeHandler} />
           <p>Data for year {filterInfoText} is hidden.</p>
+          <ExpensesChart expenses = {filteredExpenses}/>
           <ExpensesList items = {filteredExpenses}/>
         </Card>
       </li>
